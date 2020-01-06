@@ -165,6 +165,9 @@ const stylesAlt = StyleSheet.create({
     },
 });
 
+type ExternallyStyledComponentProps = { style: StyleProp<ViewStyle>; }
+const ExternallyStyledComponent: React.FC<ExternallyStyledComponentProps> = ({ style }) => <View style={[style, {/* other style */ }]} />
+
 StyleSheet.setStyleAttributePreprocessor("fontFamily", (family: string) => family);
 
 const welcomeFontSize = StyleSheet.flatten(styles.welcome).fontSize;
